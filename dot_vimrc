@@ -1,0 +1,1443 @@
+filetype plugin indent on
+syntax on
+cmap w!! w !sudo tee > /dev/null %
+
+autocmd! BufWritePost $MYVIMRC source $MYVIMRC
+
+set concealcursor=nc
+" set rtp^=$HOME/.config/coc
+" set pumblend=15
+set nocompatible
+set nofoldenable
+set undofile
+set viminfo='1000
+set undodir=~/.vim/undodir
+set showtabline=3
+set undolevels=10000
+set smarttab
+set autochdir
+set nofoldenable
+set ignorecase
+set smartcase
+set showmatch
+set showcmd
+set showmode
+set laststatus=2
+set wrap
+set hidden
+set nocompatible
+set list
+set linebreak
+set cursorline
+set nocursorcolumn
+set smartcase ignorecase infercase
+set incsearch
+set smartindent expandtab
+set autowrite
+set autoread
+set autoindent
+set autowriteall
+set infercase
+set belloff=all
+set rtp+=~/.fzf
+call plug#begin()
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+" Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
+
+Plug 'NoahTheDuke/vim-just'
+Plug 'ryanoasis/vim-devicons'
+"  Plug 'vim-ctrlspace/vim-ctrlspace'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'andymass/vim-matchup'
+Plug 'junegunn/fzf', { 'do': './install --all', 'dir': '~/.fzf'}
+" Plug 'liuchengxu/vim-which-key'
+Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
+Plug 'lotabout/skim.vim'
+Plug 'sbdchd/neoformat'
+Plug 'Exafunction/codeium.vim'
+Plug 'justinmk/vim-sneak'
+" Plug 'tpope/vim-fireplace'
+Plug 'brooth/far.vim'
+Plug 'vim-test/vim-test'
+Plug 'wellle/context.vim'
+" with vim-plug
+Plug 'https://github.com/alok/notational-fzf-vim'
+Plug 'itchyny/calendar.vim'
+Plug 'lervag/vimtex'
+Plug 'mhinz/vim-signify'
+Plug 'puremourning/vimspector'
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+" Plug 'yaegassy/coc-ast-grep', {'do': 'yarn install --frozen-lockfile'}
+Plug 'fatih/vim-go'
+" Plug 'neomake/neomake'
+Plug 'voldikss/vim-floaterm'
+Plug 'wellle/targets.vim'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'skywind3000/asynctasks.vim'
+Plug 'tpope/vim-projectionist'
+Plug 'mengelbrecht/lightline-bufferline'
+" Plug 'easymotion/vim-easymotion'
+" Plug 'tpope/vim-vinegar'
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/fzf.vim'
+" Plug 'preservim/nerdtree'
+" Plug 'yaegassy/coc-astro', {'do': 'yarn install --frozen-lockfile'}
+
+Plug 'junegunn/vim-easy-align'
+" Plug 'clojure-vim/vim-jack-in'
+" Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
+Plug 'ayu-theme/ayu-vim'
+Plug 'tpope/vim-sensible'
+" Plug 'tpope/vim-signature'
+Plug 'psliwka/vim-smoothie'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'antoinemadec/coc-fzf', { 'branch': 'release'}
+Plug 'ryanoasis/vim-devicons'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'fatih/vim-go'
+" Plug 'yuttie/comfortable-motion.vim'
+Plug 'github/copilot.vim' 
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-dadbod'
+  Plug 'kristijanhusak/vim-dadbod-ui',
+
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-sleuth'
+Plug 'sheerun/vim-polyglot'
+Plug 'preservim/tagbar'
+Plug 'preservim/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
+Plug 'vimwiki/vimwiki'
+Plug 'lervag/wiki.vim'
+Plug 'mhinz/vim-startify'
+Plug 'itchyny/lightline.vim'
+" Plug 'zbirenbaum/copilot.lua'
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
+
+call plug#end()
+
+let g:context_add_mappings=0
+let g:context_add_mappings = 1
+let g:context_add_autocmds = 1
+let g:context_enabled = 1
+    nnoremap <silent> <expr> <C-Y> context#util#map('<C-Y>')
+    nnoremap <silent> <expr> <C-E> context#util#map('<C-E>')
+    nnoremap <silent> <expr> zz    context#util#map('zz')
+    nnoremap <silent> <expr> zb    context#util#map('zb')
+    nnoremap <silent> <expr> zt    context#util#map_zt()
+" lua << EOF
+" example
+let g:nv_search_paths = ['~/wiki', '~/.clp', '~/norg', '~/Documents',
+      \ '~/notes.md', '~/notes', '~/org']
+let g:nv_create_note_key = '<c-n>'
+let g:nv_show_preview = 1
+
+nnoremap <silent> <c-f><c-n> :NV<CR>
+nnoremap <silent> <c-f>. <cmd>Files ~/.config<CR>
+nnoremap <silent> <c-f>, <cmd>Files ~/.clp<CR>
+nnoremap <silent> <c-f><c-w> <cmd>Files ~/.clp<CR>
+" -- hi
+" require("CopilotChat").setup({
+"   debug = true,
+" })
+
+" EOF
+let g:wiki_root = '~/.clp'
+let g:vimwiiki_listing_hl=1
+set clipboard=
+let g:mapleader="\<space>"
+let g:maplocalleader=","
+set timeoutlen=500
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+nnoremap <silent> \ :<c-u>WhichKey  '\'<CR>
+nnoremap <silent> m :<c-u>WhichKey  'm'<CR>
+nnoremap <silent> <c-c> :<c-u>WhichKey  '<c-c>'<CR>
+" nnoremap <silent> g :<c-u>WhichKey  'g'<CR>
+nnoremap <silent> _ :<c-u>WhichKey  '_'<CR>
+nnoremap <silent> - :<c-u>WhichKey  '-'<CR>
+nnoremap <silent> + :<c-u>WhichKey  '+'<CR>
+nnoremap <silent> = :<c-u>WhichKey  '='<CR>
+nnoremap <silent> : :<c-u>WhichKey  ':'<CR>
+nnoremap <silent> " :<c-u>WhichKey  '"'<CR>
+nnoremap <silent> ` :<c-u>WhichKey  '`'<CR>
+nno <c-x><c-w> <CMD>bd<CR>
+nno <C-o> <CMD>FloatermToggle<CR>
+nno <C-t> <CMD>FloatermToggle<CR>
+tno <C-t> <C-\><C-n>:FloatermToggle<CR>
+
+nno <silent> :: <CMD>
+" set nocompatible
+" set runtimepath^=~/.vim/bundle/coc.nvim
+" filetype plugin indent on
+" syntax on
+" set hidden
+
+" let g:coc_data_home = '~/.vim/.coc'
+
+set wildchar=<tab>
+cabbrev cz CocFzfList<c-z>
+nno mcc <CMD>CocFzfList commands<CR>
+nno m<bs> <CMD>CocFzfListResume<CR>
+nno mD <CMD>CocFzfList diagnostics<CR>
+nno md <CMD>CocFzfList diagnostics --current-buf<CR>
+nno mv <CMD>CocFzfList vimcommands<CR>
+nno mr <CMD>CocFzfList mru<CR>
+nno mi <CMD>CocFzfList issues<CR>
+nno mm <CMD>CocFzfList marketplace<CR>
+nno me <CMD>CocFzfList extensions<CR>
+
+let g:lightline = {
+      \'component_function': {
+        \   'filetype': 'MyFiletype',
+        \   'fileformat': 'MyFileformat',
+      \ 'cocstatus': 'coc#status',
+      \'blame': 'LightlineGitBlame',
+      \},
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+        \     [ 'git', 'diagnostic', 'cocstatus', 'filename', 'method' ]
+        \],
+      \   'right': [ [ 'lineinfo', 'blame', ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ },
+      \ 'inactive': {
+      \   'left': [ [ 'filename' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ] ]
+      \ },
+      \'tabline_separator': {'left': '█', 'right': '█'},
+      \'tabline_subseparator': {'left': '█', 'right': '█'},
+      \'separator': { 'left': '', 'right': '' },
+      \'subseparator': { 'left': '|', 'right': '|' },
+      \'colorscheme': 'ayu',
+      \ 'component_expand': {
+      \   'buffers': 'lightline#bufferline#buffers',
+      \   'tabs': 'lightline#tabline#tabs',
+      \ },
+      \'enable': {
+      \'tabline': 1,
+      \'statusline': 1,
+      \},
+      \'component_type': {
+      \  'buffers': 'tabsel',
+      \},
+      \'tabline': {
+        \ 'left': [ ['buffers'], ],
+        \ 'right': [ ['tabs'], ['close'] ]
+      \},
+      \'tab': {
+        \ 'active': ['tabnum', 'filename', 'modified'],
+        \ 'inactive': ['tabnum', 'filename', 'modified']
+      \},
+      \ 'tab_component_function': {
+      \ 'filename': 'lightline#tab#filename',
+      \ 'modified': 'lightline#tab#modified',
+      \ 'readonly': 'lightline#tab#readonly',
+      \ 'tabnum': 'lightline#tab#tabnum' }
+      \}
+function! LightlineGitBlame() abort
+  let blame = get(b:, 'coc_git_blame', '')
+  " return blame
+  return winwidth(0) > 120 ? blame : ''
+endfunction
+  function! MyFiletype()
+    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+  endfunction
+  
+  function! MyFileformat()
+    return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+  endfunction
+nmap <Leader>1 <Plug>lightline#bufferline#go(1)
+nmap <Leader>2 <Plug>lightline#bufferline#go(2)
+nmap <Leader>3 <Plug>lightline#bufferline#go(3)
+nmap <Leader>4 <Plug>lightline#bufferline#go(4)
+nmap <Leader>5 <Plug>lightline#bufferline#go(5)
+nmap <Leader>6 <Plug>lightline#bufferline#go(6)
+nmap <Leader>7 <Plug>lightline#bufferline#go(7)
+nmap <Leader>8 <Plug>lightline#bufferline#go(8)
+nmap <Leader>9 <Plug>lightline#bufferline#go(9)
+nmap <Leader>0 <Plug>lightline#bufferline#go(10)
+  autocmd BufWritePost ~/.local/share/chezmoi/* ! chezmoi apply --source-path "%"
+
+nmap gL   <Plug>lightline#bufferline#go_next()
+nmap gH <Plug>lightline#bufferline#go_previous()
+  autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
+  set autowrite
+" let g:lightline.colorscheme = 'ayu'
+" let g:lightline.subseparator = { 'left': '', 'right': '' } 
+" let g:lightline.active = {
+"     \ 'left': [ [ 'mode', 'paste' ],
+"     \           [ 'readonly', 'filename', 'modified' ] ],
+"     \ 'right': [ [ 'lineinfo' ],
+"     \            [ 'percent' ],
+"     \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
+" let g:lightline.inactive = {
+"     \ 'left': [ [ 'filename' ] ],
+"     \ 'right': [ [ 'lineinfo' ],
+"     \            [ 'percent' ] ] }
+" let g:lightline.tabline = {
+"     \ 'left': [ [ 'buffers' ] ],
+"     \ 'right': [ [ 'tabs', 'close' ] ] }
+" let g:lightline.tab = {
+"     \ 'active': [ 'tabnum', 'filename', 'modified' ],
+"     \ 'inactive': [ 'tabnum', 'filename', 'modified' ] }
+
+" function! SyntasticCheckHook(errors)
+  " call lightline#update()
+" endfunction
+
+" let g:lightline.component_expand = {
+"   \ 'tabs': 'lightline#tabs' }
+" noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+" noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+" noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+" noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
+let g:vimwiki_markdown_link_ext = 1
+let g:vimwiki_dir_link = 'index'
+let g:vimwiki_list = [{ 'path': '~/.clp', 'ext': '.md',
+      \'diary_rel_path': 'notes',
+      \'syntax':'markdown','auto_tags': 1}]
+let g:vimwiki_hl_cb_checked = 1
+" let g:vimwiki_listsyms: '✗○◐●✓'
+
+let g:vimwiki_conceal_pre = 1
+let g:vimwiki_listsym_rejected = '✗'
+let g:vimwiki_filetypes = ['markdown', 'pandoc']
+let g:vimwiki_map_prefix = "<space>w"
+let g:vimwiiki_listing_hl = 1
+let g:vimwiki_auto_header = 1
+let g:vimwiki_hl_headers = 1
+let g:vimwiki_global_ext = 0
+let g:vimwiki_tags_header = 'Tags'
+let g:vimwiki_markdown_link_ext = 1
+let g:vimwiki_dir_link = 'index'
+let g:vimwiki_hl_cb_checked = 1
+set mouse=a
+" set completefunc=vimwiki#emoji#complete
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+let g:easy_align_delimiters = {
+\ '>': { 'pattern': '>>\|=>\|>' },
+\ '/': {
+\     'pattern':         '//\+\|/\*\|\*/',
+\     'delimiter_align': 'l',
+\     'ignore_groups':   ['!Comment'] },
+\ ']': {
+\     'pattern':       '[[\]]',
+\     'left_margin':   0,
+\     'right_margin':  0,
+\     'stick_to_left': 0
+\   },
+\ ')': {
+\     'pattern':       '[()]',
+\     'left_margin':   0,
+\     'right_margin':  0,
+\     'stick_to_left': 0
+\   },
+\ 'd': {
+\     'pattern':      ' \(\S\+\s*[;=]\)\@=',
+\     'left_margin':  0,
+\     'right_margin': 0
+\   }
+\ }
+let g:easy_align_bypass_fold = 0
+let g:easy_align_interactive_modes = ['l', 'r']
+let g:easy_align_bang_interactive_modes = ['c', 'r']
+" let g:comfortable_motion_friction = 80.0
+" let g:comfortable_motion_air_drag = 2.0
+" let g:comfortable_motion_friction = 200.0
+" let g:comfortable_motion_air_drag = 0.0
+" let g:comfortable_motion_friction = 0.0
+" let g:comfortable_motion_air_drag = 4.0
+" let g:comfortable_motion_no_default_key_mappings = 1
+" let g:comfortable_motion_impulse_multiplier = 1  " Feel free to increase/decrease this value.
+" nnoremap <silent> <C-d> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 2)<CR>
+" nnoremap <silent> <C-u> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -2)<CR>
+" nnoremap <silent> <C-f> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 4)<CR>
+" nnoremap <silent> <C-b> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -4)<CR>
+nmap iga <Plug>(LiveEasyAlign)
+xmap iga <Plug>(LiveEasyAlign)
+function! GFM()
+  let langs = ['ruby', 'yaml', 'vim', 'c']
+
+  for lang in langs
+    unlet b:current_syntax
+    silent! exec printf("syntax include @%s syntax/%s.vim", lang, lang)
+    exec printf("syntax region %sSnip matchgroup=Snip start='```%s' end='```' contains=@%s",
+                \ lang, lang, lang)
+  endfor
+  let b:current_syntax='mkd'
+
+  syntax sync fromstart
+endfunction
+let g:easy_align_delimiters['d'] = {
+\ 'pattern': ' \ze\S\+\s*[;=]',
+\ 'left_margin': 0, 'right_margin': 0
+\ }
+
+" mappings
+nnoremap <silent> <space>cs       <CMD>CocSearch<CR>
+nnoremap <silent> <space>cp       <CMD>CocPrev<CR>
+nnoremap <silent> <space>ci       <CMD>CocInfo<CR>
+nnoremap <silent> <space>cu       <CMD>CocUpdate<CR>
+nnoremap <silent> <space><cr>       <CMD>CocCommand<space><c-z>
+nnoremap <silent> <space>.       <CMD>CocFzfListResume<CR>
+nnoremap <silent> <space><bs>       <CMD>CocListResume<CR>
+nnoremap <silent> <space>cl       <CMD>CocList<CR>
+nnoremap <silent> <space>cL       <CMD>CocFzfList lists<CR>
+nnoremap <silent> <space>cd       <CMD>CocFzfList diagnostics<CR>
+nnoremap <silent> <space>cD       <CMD>CocFzfList diagnostics --current-buf<CR>
+nnoremap <silent> <space>cc       <CMD>CocFzfList commands<CR>
+nnoremap <silent> <space>ce       <CMD>CocFzfList extensions<CR>
+nnoremap <silent> <space>cl       <CMD>CocFzfList location<CR>
+nnoremap <silent> <space>co       <CMD>CocOutline<CR>
+nnoremap <silent> <space>cO       <CMD>CocFzfList outline<CR>
+nnoremap <silent> <space>cs       <CMD>CocFzfList symbols<CR>
+nnoremap <silent> <space>c<CR>       <CMD>CocFzfListResume<CR>
+" add_list_source(name, description, command)
+call coc_fzf#common#add_list_source('fzf-buffers', 'display open buffers', 'Buffers')
+
+" delete_list_source(name)
+call coc_fzf#common#delete_list_source('fzf-buffers')
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" An action can be a reference to a function that processes selected lines
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val, "lnum": 1 }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" Default fzf layout
+" - Popup window (center of the screen)
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+
+" - Popup window (center of the current window)
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true } }
+
+" - Popup window (anchored to the bottom of the current window)
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true, 'yoffset': 1.0 } }
+
+" - down / up / left / right
+let g:fzf_layout = { 'down': '40%' }
+
+" - Window using a Vim command
+let g:fzf_layout = { 'window': 'enew' }
+let g:fzf_layout = { 'window': '-tabnew' }
+let g:fzf_layout = { 'window': '10new' }
+
+" Customize fzf colors to match your color scheme
+" - fzf#wrap translates this to a set of `--color` options
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+" Enable per-command history
+" - History files will be stored in the specified directory
+" - When set, CTRL-N and CTRL-P will be bound to 'next-history' and
+"   'previous-history' instead of 'down' and 'up'.
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" An action can be a reference to a function that processes selected lines
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val, "lnum": 1 }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" Default fzf layout
+" - Popup window (center of the screen)
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+
+" - Popup window (center of the current window)
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true } }
+
+" - Popup window (anchored to the bottom of the current window)
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true, 'yoffset': 1.0 } }
+
+" - down / up / left / right
+let g:fzf_layout = { 'down': '40%' }
+
+" - Window using a Vim command
+let g:fzf_layout = { 'window': 'enew' }
+let g:fzf_layout = { 'window': '-tabnew' }
+let g:fzf_layout = { 'window': '10new' }
+
+" Customize fzf colors to match your color scheme
+" - fzf#wrap translates this to a set of `--color` options
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+" Enable per-command history
+" - History files will be stored in the specified directory
+" - When set, CTRL-N and CTRL-P will be bound to 'next-history' and
+"   'previous-history' instead of 'down' and 'up'.
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" An action can be a reference to a function that processes selected lines
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val, "lnum": 1 }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" Default fzf layout
+" - Popup window (center of the screen)
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+
+" - Popup window (center of the current window)
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true } }
+
+" - Popup window (anchored to the bottom of the current window)
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true, 'yoffset': 1.0 } }
+
+" - down / up / left / right
+let g:fzf_layout = { 'down': '40%' }
+
+" - Window using a Vim command
+let g:fzf_layout = { 'window': 'enew' }
+let g:fzf_layout = { 'window': '-tabnew' }
+let g:fzf_layout = { 'window': '10new' }
+
+" Customize fzf colors to match your color scheme
+" - fzf#wrap translates this to a set of `--color` options
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+command! -bang -complete=dir -nargs=? LS
+    \ call fzf#run(fzf#wrap('ls', {'source': 'ls', 'dir': <q-args>}, <bang>0))
+command! -bang -complete=dir -nargs=? LS
+    \ call fzf#run(fzf#wrap({'source': 'ls', 'dir': <q-args>}, <bang>0))
+" On :LS!, <bang> evaluates to '!', and '!0' becomes 1
+command! -bang LS call fzf#run(fzf#wrap({'source': 'ls'}, <bang>0))
+command! LS call fzf#run(fzf#wrap({'source': 'ls'}))
+" up / down / left / right / window are allowed
+" call fzf#run({'source': 'git ls-files', 'sink': 'e', 'left': '40%'})
+" call fzf#run({'source': 'git ls-files', 'sink': 'e', 'window': '30vnew'})
+command! -bang -nargs=* Ag call fzf#vim#ag_interactive(<q-args>, fzf#vim#with_preview('right:50%:hidden', 'alt-h'))
+command! -bang -nargs=* Rg call fzf#vim#rg_interactive(<q-args>, fzf#vim#with_preview('right:50%:hidden', 'alt-h'))
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', 'cat {}']}, <bang>0)
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', '~/.vim/plugged/fzf.vim/bin/preview.sh {}']}, <bang>0)
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+command! -bang -nargs=* GGrep
+  \ call fzf#vim#grep(
+  \   'git grep --line-number -- '.shellescape(<q-args>), 0,
+  \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+" Mapping selecting mappings
+nmap <leader>fk <plug>(fzf-maps-n)
+xmap <leader>fx <plug>(fzf-maps-x)
+omap <leader>fo <plug>(fzf-maps-o)
+
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case\ --hidden
+set grepformat=%f:%l:%c:%m,%f:%l:%m
+" Use ripgrep in fzf
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep('rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1, <bang>0)
+" Insert mode completion
+" imap <c-x><c-k> <plug>(fzf-complete-word)
+" imap <c-x><c-f> <plug>(fzf-complete-path)
+" imap <c-x><c-l> <plug>(fzf-complete-line)
+
+" Path completion with custom source command
+" inoremap <expr> <c-x><c-f> fzf#vim#complete#path('fd')
+" inoremap <expr> <c-x><c-f> fzf#vim#complete#path('rg --files')
+
+" Word completion with custom spec with popup layout option
+" inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'window': { 'width': 0.2, 'height': 0.9, 'xoffset': 1 }})
+" command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+
+" Replace the default dictionary completion with fzf-based fuzzy completion
+" inoremap <expr> <c-x><c-k> fzf#vim#complete('cat /usr/share/dict/words')
+" Global line completion (not just open buffers. ripgrep required.)
+" inoremap <expr> <c-x><c-l> fzf#vim#complete(skim#wrap({
+"   \ 'prefix': '^.*$',
+"   \ 'source': 'rg -n ^ --color always',
+"   \ 'options': '--ansi --delimiter : --nth 3..',
+"   \ 'reducer': { lines -> join(split(lines[0], ':\zs')[2:], '') }}
+
+" function! s:make_sentence(lines)
+"   return substitute(join(a:lines), '^.', '\=toupper(submatch(0))', '').'.'
+" endfunction
+
+" inoremap <expr> <c-x><c-s> fzf#vim#complete({
+"   \ 'source':  'cat /usr/share/dict/words',
+"   \ 'reducer': function('<sid>make_sentence'),
+"   \ 'options': '--multi --reverse --margin 15%,0',
+"   \ 'left':    20}
+
+" function! s:fzf_statusline()
+"   " Override statusline as you like
+"   highlight fzf1 ctermfg=161 ctermbg=251
+"   highlight fzf2 ctermfg=23 ctermbg=251
+"   highlight fzf3 ctermfg=237 ctermbg=251
+"   setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
+" endfunction
+
+" autocmd! User FzfStatusLine call <SID>fzf_statusline()
+setg laststatus=3
+setg showtabline=2
+" if empty(&g:statusline)
+  " setglobal statusline=[%n]\ %<%.99f\ %y%h%w%m%r%=%-14.(%l,%c%V%)\ %P
+" endif
+setg noconfirm
+setg showcmd
+setg showmatch
+setg browsedir=buffer,split
+set undofile undolevels=10000
+nmap <F1> <nop>
+nnoremap <F2> :ls<CR>
+setg infercase
+setg virtualedit=block
+" syntax enable
+" syntax on
+" set nocompatible
+set ruler
+set title
+set termencoding=utf-8
+" set wildmode=longest:full,full
+set wildmode=full
+set wildoptions=pum,tagfile
+set pumheight=0
+set autoindent
+set conceallevel=2
+set showmatch
+set autochdir
+" set smartindent
+" set concealcursor=nc
+" set nofoldenable
+" set showfulltag
+" set showmode
+set sr sb
+set autowrite
+" set hidden
+" set nowarn
+" set updatetime=200
+" set encoding=utf-8
+" set wrap
+" set nowarn
+" set history=1000
+" set nostartofline
+set cmdheight=1
+set hlsearch
+set shortmess+=c
+set number relativenumber
+set wildmenu wildoptions=pum,tagfile wcm=<C-z>
+set completeopt=menuone,noinsert,noselect
+" set clipboard=unnamedplus
+" set laststatus=3
+" set showtabline=2
+set ignorecase
+set smartcase
+let g:clap_provider_dotfiles = {
+      \ 'source': ['~/.vimrc', '~/.spacevim', '~/.bashrc', '~/.tmux.conf'],
+      \ 'sink': 'e',
+      \ 'description': 'Open some dotfile',
+      \ }
+
+  nno L <cmd>bn<CR>
+  nno H <cmd>bp<CR>
+
+  nno <C-h> <cmd>wincmd h<CR>
+  nno <C-l> <cmd>wincmd l<CR>
+  nno <C-j> <cmd>wincmd j<CR>
+  nno <C-k> <cmd>wincmd k<CR>
+
+" cno <c-b> <left>
+" cno <c-f> <right>
+" cno <c-a> <home>
+" cno <c-e> <end>
+" cno <c-h> <bs>
+
+" ino <c-b> <left>
+" ino <c-f> <right>
+" ino <c-j> <down>
+" ino <c-k> <up>
+" ino <c-a> <home>
+" ino <c-e> <end>
+" ino <c-h> <bs>
+" May need for Vim (not Neovim) since coc.nvim calculates byte offset by count
+" utf-8 byte sequence
+set encoding=utf-8
+
+" Some servers have issues with backup files, see #649
+set nobackup
+set nowritebackup
+
+" Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
+" delays and poor user experience
+set updatetime=300
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved
+set signcolumn=yes
+
+" Use tab for trigger completion with characters ahead and navigate
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file
+" NOTE: Use jcommand ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config
+imap <silent><script><expr> <C-v> copilot#Accept("\<CR>")
+imap <C-g> <Plug>(copilot-accept-word)
+imap <C-w> <Plug>(copilot-accept-word)
+imap <C-d> <Plug>(copilot-next)
+imap <C-u> <Plug>(copilot-previous)
+" imap <C-n> <Plug>(copilot-next)
+" imap <C-p> <Plug>(copilot-previous)
+" imap <C-]> <Plug>(copilot-next)
+" imap <C-[> <Plug>(copilot-previous)
+inoremap ,, <C-c>
+inoremap ;; <C-c> 
+inoremap ;l <CMD>CocCommand fzf-preview.CommandPalette<CR>
+inoremap ;: <CMD>CocCommand fzf-preview.CommandPalette<CR>
+inoremap ,. <C-c>
+inoremap ., <C-c>
+imap <c-f><c-s> <cmd>w<cr>
+imap <c-f> <cmd>w<cr>
+imap <C-e> <Plug>(copilot-dismiss)
+imap <C-s> <Plug>(copilot-suggest)
+imap <C-r> <Plug>(copilot-accept-line)
+imap <C-l> copilot#Accept("\<CR>")
+inoremap <C-c><C-p> <CMD>Copilot panel<CR>
+inoremap <C-x><C-p> <CMD>Copilot panel<CR>
+" nnoremap <space><space> <CMD>Copilot panel<CR>
+" nnoremap <c-space><c-space> <CMD>Copilot panel<CR>
+" inoremap <c-space><c-space> <CMD>Copilot panel<CR>
+" autocmd ColorScheme * hi CopilotSuggestion link Directory
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? coc#_select_confirm() :
+"       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+"       \ CheckBackSpace() ? "\<TAB>" :
+"       \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-y> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-]>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-[>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-s><C-j> <Plug>(coc-snippets-expand-jump)
+
+" Use <leader>x for convert visual selected code to snippet
+xmap <leader>cx  <Plug>(coc-convert-snippet)
+
+function! CheckBackSpace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<c-s>'
+imap <C-s><C-l> <Plug>(coc-snippets-expand)
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+" inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>" : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Symbol renaming
+nmap <leader>rn <Plug>(coc-rename)
+
+" Formatting selected code
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s)
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Applying code actions to the selected code block
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying code actions at the cursor position
+nmap <leader>ac  <Plug>(coc-codeaction-cursor)
+" Remap keys for apply code actions affect whole buffer
+nmap <leader>as  <Plug>(coc-codeaction-source)
+" Apply the most preferred quickfix action to fix diagnostic on the current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Remap keys for applying refactor code actions
+nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
+xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+
+" Run the Code Lens action on the current line
+nmap <leader>cl  <Plug>(coc-codelens-action)
+
+" Map function and class text objects
+" NOTE: Requires 'textDocument.documentSymbol' support from the language server
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
+
+" Remap <C-f> and <C-b> to scroll float windows/popups
+if has('nvim-0.4.0') || has('patch-8.2.0750')
+  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+endif
+
+" Use CTRL-S for selections ranges
+" Requires 'textDocument/selectionRange' support of language server
+nmap <silent> <C-s> <Plug>(coc-range-select)
+xmap <silent> <C-s> <Plug>(coc-range-select)
+
+" Add `:Format` command to format current buffer
+command! -nargs=0 Format :call CocActionAsync('format')
+
+" Add `:Fold` command to fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" Add `:OR` command for organize imports of the current buffer
+command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
+
+" Add (Neo)Vim's native statusline support
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Mappings for CoCList
+" Show all diagnostics
+nnoremap <silent><nowait> <space>a  <CMD>CocList diagnostics<cr>
+" Manage extensions
+nnoremap <silent><nowait> <space>e  <CMD>CocList extensions<cr>
+" Show commands
+nnoremap <silent><nowait> <space>c  <CMD>CocList commands<cr>
+" Find symbol of current document
+nnoremap <silent><nowait> <space>o  <CMD>CocList outline<cr>
+" Search workspace symbols
+nnoremap <silent><nowait> <space>s  <CMD>CocList -I symbols<cr>
+" Do default action for next item
+nnoremap <silent><nowait> <space>j  <CMD>CocNext<CR>
+" Do default action for previous item
+nnoremap <silent><nowait> <space>k  <CMD>CocPrev<CR>
+" Resume latest coc list
+nnoremap <silent><nowait> <space>p  <CMD>CocListResume<CR>
+set backspace=indent,eol,start
+
+
+let ayucolor="mirage"
+colorscheme ayu
+nno ,s <cmd>so %<CR>
+nno ,ev <cmd>:e ~/.vimrc<CR>
+nno ,ff <cmd>Files<CR>
+nno ,fo <cmd>History<CR>
+nno ,fr <cmd>History<CR>
+nno ,fg <esc>Rg<CR>
+nno ,fb <cmd>Buffers<CR>
+nno <space><bs> <cmd>nohl<CR>
+map Y y$
+nno ; :
+nno H <CMD>bp<CR>
+nno L <CMD>bn<CR>
+
+	nmap Y y$
+
+nno <space>; :
+
+cno <C-b> <LEFT>
+cno <C-f> <RIGHT>
+cno <C-h> <BS>
+cno <C-d> <DEL>
+cno <C-a> <HOME>
+cno <C-e> <END>
+cno <C-j> <DOWN>
+cno <C-k> <up>
+ 
+ino <C-j> <DOWN>
+ino <C-k> <up>
+ino <C-b> <LEFT>
+ino <C-f> <RIGHT>
+ino <C-h> <BS>
+ino <C-d> <DEL>
+ino <C-a> <HOME>
+ino <C-e> <END>
+
+nno H <ESC>:bp<CR>
+nno L <ESC>:bn<CR>
+nno ,cd <CMD>:cd $:h<CR>
+nno ,ch <CMD>:cd ~<CR>
+nno ,c. <CMD>:cd ~/.config<CR>
+
+nno <C-k> <C-w>k
+nno <C-h> <C-w>h
+nno <C-l> <C-w>l
+nno <C-j> <C-w>j
+
+" Plug
+
+nno <space><bs> <CMD>set hlsearch!<CR>
+nno <space>ff <CMD>Files<CR>
+nno <space>fh <CMD>Helptags<CR>
+nno <space>fk <CMD>Maps<CR>
+nno <space>fb <CMD>Buffers<CR>
+nno <space>fg <CMD>RG<CR>
+nno ,cl <CMD>CocList<CR>
+nno ,cc <CMD>CocCommand<CR>
+nno ,cd <CMD>CocDiagnostics<CR>
+nno ,D <CMD>CocFzfList diagnostics<CR>
+nno ,cr <CMD>CocCommand terminal.REPL()<CR>
+nno <space>fd <CMD>CocList files ~/.config<CR>
+nno <space>ff <CMD>Files<CR>
+nno <space>f. <CMD>Files ./<CR>
+nno <space>fc <CMD>Files ~/.config<CR>
+nno <space>fD <CMD>Files ~/.config<CR>
+nno -d <CMD>Files ~/.config<CR>
+nno <space>fv <CMD>CocList files ~/.config/vim<CR>
+nno <space>fl <CMD>CocList files ~/.config/lvim<CR>
+nno <space>fn <CMD>CocList files ~/.config/nvim<CR>
+nno <space>fn <CMD>CocList files ~/.config/nvim<CR>
+nno <space>fo <CMD>History<CR>
+nno <space>so <CMD>History<CR>
+nno <space>sr <CMD>History<CR>
+nno <space>fr <CMD>History<CR>
+nno <space>fH <CMD>Helptags<CR>
+nno <space>fw <CMD>Windows<CR>
+nno <space>fb <CMD>Windows<CR>
+nno <space>fg <CMD>Rg<CR>
+nno <space>ft <CMD>Tags<CR>
+nno <space>fc <CMD>Commands<CR>
+nno <space>fG <CMD>grep <C-R><C-W> *<CR>
+nno <space>fl <CMD>Lines<CR>
+nno <space>fw <CMD>Windows<CR>
+nno <space>fb <CMD>Buffers<CR>
+nno <space>fk <CMD>Maps<CR>
+nno <space>fm <CMD>Man<CR>
+nno <space>M <CMD>Make<CR>
+nno <space>so <CMD>so %<CR>
+nmap <space>wa <CMD>wall<CR>
+nmap <space>; <CMD>CocList cmdhistory<CR>
+nmap <space>/ <CMD>CocList searchhistory<CR>
+nmap <space>cs <CMD>CocList symbols<CR>
+nmap <space>cf <CMD>CocList functions<CR>
+nmap <space>cg <CMD>CocList grep<CR>
+nmap <space>cm <CMD>CocList mru<CR>
+nmap <space>cc <CMD>CocList commands<CR>
+nmap <space>cv <CMD>CocList vimcommands<CR>
+nmap <space>ce <CMD>CocList extensions<CR>
+nmap <space>cd <CMD>CocList diagnostics<CR>
+nmap <space>qa <CMD>qa<CR>
+nno <space><TAB> <CMD>CocOutline<CR>
+nno <space><space><CR> <CMD>so ~/.config/nvim/init.vim<CR>
+nno <space>vi <CMD>so ~/.config/nvim/init.vim<CR>
+nmap <space>sr <ESC>:%s///g<LEFT><LEFT><LEFT>
+nmap <c-c><c-r> <ESC>:%s///g<LEFT><LEFT><LEFT>
+nmap <space>ss <ESC>:%s///gc<LEFT><LEFT><LEFT>
+nnoremap <C-_> <CMD>CocCommand split-term.Toggle<CR>
+nnoremap <C-c><C-d> <CMD>CocCommand split-term.Destroy<CR>
+nnoremap <C-c><C-r> <CMD>CocCommand split-term.REPL()<CR>
+
+set writeany
+set redrawtime=1000
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+" " Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+" " Path completion with custom source command
+inoremap <expr> <c-x><c-f> fzf#vim#complete#path('fd')
+inoremap <expr> <c-x><c-f> fzf#vim#complete#path('rg --files')
+
+" " Word completion with custom spec with popup layout option
+" inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'window': { 'width': 0.2, 'height': 0.9, 'xoffset': 1 }})
+ca co CocOutline
+ca co CocOutline
+ca ci CocInfo
+ca ce CocPrintErrors
+ca cc CocCommand
+ca cf CocConfig
+ca cl CocList
+ca cf CocFzfList
+ca cr CocFzfListResume
+ca co CocOpenLog
+ca cr CocResume
+ca co CocOutline
+ca cp CocPrev
+ca cI CocInstall
+ca cU CocUninstall
+ca cu CocUpdate
+ca cU CocUpdateSync
+ca cr CocReferences
+ca cs CocSearch
+ca ci CocDiagnostics
+ca ci CocInfo
+ca cw CocWatch
+ca cf CocFzfList
+ca cF CocFzfListResume
+ca clr CocListResume
+ca clc CocListCancel
+ca ccl CocList
+ca cy CocYank
+nmap <space>n <CMD>CocCommand explorer<CR>
+nmap ,C <CMD>CocConfig<CR>
+nmap ,cm <CMD>CocList marketplace<CR>
+nmap ,cd <CMD>CocList diagnostics<CR>
+nmap ,cd <CMD>CocList diagnostics<CR>
+function! s:format_coc_diagnostic(item) abort
+  return (has_key(a:item,'file')  ? bufname(a:item.file) : '')
+        \ . '|' . (a:item.lnum  ? a:item.lnum : '')
+        \ . (a:item.col ? ' col ' . a:item.col : '')
+        \ . '| ' . a:item.severity
+        \ . ': ' . a:item.message
+endfunction
+
+function! s:get_current_diagnostics() abort
+  " Remove entries not belonging to the current file.
+  let l:diags = filter(copy(CocAction('diagnosticList')), {key, val -> val.file ==# expand('%:p')})
+  return map(l:diags, 's:format_coc_diagnostic(v:val)')
+endfunction
+
+function! s:format_qf_diags(item) abort
+  let l:parsed = s:parse_error(a:item)
+  return {'bufnr' : bufnr(l:parsed['bufnr']), 'lnum' : l:parsed['linenr'], 'col': l:parsed['colnr'], 'text' : l:parsed['text']}
+endfunction
+
+function! s:build_quickfix_list(lines)
+  call setqflist(map(a:lines, 's:format_qf_diags(v:val)'),'r', "Diagnostics")
+endfunc
+
+let s:TYPE = {'dict': type({}), 'funcref': type(function('call')), 'string': type(''), 'list': type([])}
+
+let s:default_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+function! s:action_for(key, ...)
+  let default = a:0 ? a:1 : ''
+  if a:key == 'ctrl-q'
+    let l:Cmd = function('s:build_quickfix_list')
+  else
+    let l:Cmd = get(get(g:, 'fzf_action', s:default_action), a:key, default)
+  endif
+  return l:Cmd
+endfunction
+
+function! GetFzfDiags() abort
+  let l:diags = CocAction('diagnosticList')
+  if !empty(l:diags)
+    let expect_keys = join(keys(get(g:, 'fzf_action', s:default_action)), ',')
+    let l:opts = {
+          \ 'source': s:get_current_diagnostics(),
+          \ 'sink*': function('s:error_handler'),
+          \ 'options': ['--multi','--expect=ctrl-q,'.expect_keys,'--ansi', '--prompt=Coc Diagnostics> '],
+          \ }
+    call fzf#run(fzf#wrap(l:opts))
+    call s:syntax()
+  endif
+endfunction
+
+function! s:syntax() abort
+  if has('syntax') && exists('g:syntax_on')
+    syntax match FzfQuickFixFileName '^[^|]*' nextgroup=FzfQuickFixSeparator
+    syntax match FzfQuickFixSeparator '|' nextgroup=FzfQuickFixLineNumber contained
+    syntax match FzfQuickFixLineNumber '[^|]*' contained contains=FzfQuickFixError
+    syntax match FzfQuickFixError 'error' contained
+
+    highlight default link FzfQuickFixFileName Directory
+    highlight default link FzfQuickFixLineNumber LineNr
+    highlight default link FzfQuickFixError Error
+  endif
+endfunction
+
+function! s:error_handler(err) abort
+
+  let l:Cmd = s:action_for(a:err[0])
+
+  if !empty(l:Cmd) && type(l:Cmd) == s:TYPE.string && stridx('edit', l:Cmd) < 0
+    execute 'silent' l:Cmd
+  elseif !empty(l:Cmd) && type(l:Cmd) == s:TYPE.funcref
+    call l:Cmd(a:err[1:])
+    return
+  endif
+  let l:parsed = s:parse_error(a:err[1:])
+  execute 'buffer' bufnr(l:parsed["bufnr"])
+  mark '
+  call cursor(l:parsed["linenr"], l:parsed["colnr"])
+  normal! zvzz
+
+endfunction
+
+function! s:parse_error(err) abort
+  let l:match = matchlist(a:err, '\v^([^|]*)\|(\d+)?%(\scol\s(\d+))?.*\|(.*)')[1:4]
+  if empty(l:match) || empty(l:match[0])
+    return
+  endif
+
+  if empty(l:match[1]) && (bufnr(l:match[0]) == bufnr('%'))
+    return
+  endif
+
+  let l:line_number = empty(l:match[1]) ? 1 : str2nr(l:match[1])
+  let l:col_number = empty(l:match[2]) ? 1 : str2nr(l:match[2])
+  let l:error_msg = l:match[3]
+
+  return ({'bufnr' : l:match[0],'linenr' : l:line_number, 'colnr':l:col_number, 'text': l:error_msg})
+endfunction
+
+" ========== FILETYPES ===========
+"
+  autocmd FileType json syntax match Comment +\/\/.\+$+
+function! SetupCommandAbbrs(from, to)
+  exec 'cnoreabbrev <expr> '.a:from
+        \ .' ((getcmdtype() ==# ":" && getcmdline() ==# "'.a:from.'")'
+        \ .'? ("'.a:to.'") : ("'.a:from.'"))'
+endfunction
+call SetupCommandAbbrs(',C', 'CocConfig')
+
+let g:clap_provider_quick_open = {
+      \ 'source': ['~/.vimrc', '~/.spacevim', '~/.bashrc', '~/.tmux.conf'],
+      \ 'sink': 'e',
+      \ 'description': 'Quick open some dotfiles',
+      \ }
+
+let g:clap_provider_dotfiles = {
+      \ 'source': ['~/.vimrc', '~/.spacevim', '~/.bashrc', '~/.tmux.conf'],
+      \ 'sink': 'e',
+      \ 'description': 'Open some dotfile',
+      \ }
+ 
+let g:clap_provider_commands = {
+      \ 'source': ['Clap debug', 'UltiSnipsEdit'],
+      \ 'sink': { selected -> execute(selected, '')},
+      \ 'description': 'Execute some command',
+      \ }
+function! TaskSource() abort
+  let source_filetype = getbufvar(g:clap.start.bufnr, '&filetype')
+  " Return the command list according to the filetype.
+  " You can also use a Dict for easier config.
+  if source_filetype ==# 'rust'
+    return ['cargo build', 'cargo run']
+  elseif source_filetype ==# 'go'
+    return ['go build']
+  else
+    return []
+  endif
+endfunction
+
+function! TaskSink(selected) abort
+  " Execute the command properly, like run in a terminal buffer or something.
+  "
+  " Here is a dead simple example to run the command in a blocking way.
+  execute '!'.a:selected
+endfunction
+
+let g:clap_provider_task = {
+      \ 'source': function('TaskSource'),
+      \ 'sink': function('TaskSink'),
+      \ 'description': 'Task',
+      \ }
+
+let g:clojure_syntax_keywords = {
+    \   'clojureMacro': ["defproject", "defcustom"],
+    \   'clojureFunc': ["string/join", "string/replace"]
+    \ }
+
+" Default
+let g:clojure_fuzzy_indent = 1
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let']
+let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-context)$']
+" Default
+let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn'
+set laststatus=2
+set showtabline=2
+set guioptions-=e
+
+nnoremap k gk
+nnoremap j gj
+nnoremap ,b :ls<CR>:buffer<Space>
+
+cmap w!! w !sudo tee > /dev/null %
+set laststatus=2
+set showtabline=2
+set guioptions-=e
+
+" ======== AUTOCMD ===========
+autocmd User Flags call Hoist("buffer", "fugitive#statusline")
+autocmd User Flags call Hoist("window", "SyntasticStatuslineFlag")
+autocmd User Flags call Hoist("global", "%{&ignorecase ? '[IC]' : ''}")
+let g:tablabel =
+      \ "%N%{flagship#tabmodified()} %{flagship#tabcwds('shorten',',')}"
+
+setg conceallevel=2
+setg lazyredraw
+setg redrawtime=3000
+setg showmatch
+setg showmode
+set showfulltag
+set termguicolors
+setg showcmd
+setg showtabline=2
+setg showfulltag
+
+"======== MAP =========
+command! -bang -nargs=* AGr call fzf#vim#ag_interactive(<q-args>, fzf#vim#with_preview('right:50%:hidden', 'alt-h'))
+command! -bang -nargs=* Rgr call fzf#vim#rg_interactive(<q-args>, fzf#vim#with_preview('right:50%:hidden', 'alt-h'))
+
+inoremap <c-\> <CMD>Copilot panel<CR>
+" 
+"
+" 
+
+nno <space>ff <CMD>Files<CR>
+    
+
+imap <silent><script><expr> <C-G> copilot#Accept("\<CR>")
+imap <C-_> <Plug>(copilot-accept-line)
+imap <C-J> <Plug>(copilot-accept-line)
+imap <C-L> <Plug>(copilot-accept-line)
+imap <C-g> <Plug>(copilot-accept-word)
+imap <C-S> <Plug>(copilot-suggest)
+imap <C-E> <Plug>(copilot-dismiss)
+imap <C-D> <Plug>(copilot-next)
+imap <C-U> <Plug>(copilot-previous)
+let g:copilot_no_tab_map = v:false
+let g:codeium_enabled = v:true
+let g:codeium_no_map_tab = v:true
+let g:codeium_render = v:false
+
+autocmd ColorScheme solarized
+              \ highlight CopilotSuggestion guifg=#555555 ctermfg=8
+
+
+nno <space>n <CMD>CocCommand explorer<CR>
+nno ,fc <CMD>CocCommand fzf-preview.CommandPalette<CR>
+nno ,f: <CMD>Commands<CR>
+nno ,fd <CMD>CocCommand fzf-preview.CocDiagnostics<CR>
+nno ,f; <CMD>Commands<CR>
+nno ,fD <CMD>CocCommand fzf-preview.CocCurrentDiagnostics<CR>
+nno ,fI <CMD>CocCommand fzf-preview.CocImplementations<CR>
+nno ,fF <CMD>CocCommand fzf-preview.CocDefinition<CR>
+nno ,fY <CMD>CocCommand fzf-preview.CocTypeDefinition<CR>
+nno ,fR <CMD>CocCommand fzf-preview.CocReferences<CR>
+nno ,fO <CMD>CocCommand fzf-preview.CocOutline<CR>
+nno ,ff <CMD>FZF<CR>
+nno ,fd <CMD>FZF ~/.config<CR>
+nno ,fv <CMD>CocFzfList files ~/.config/vim<CR>
+nno ,fg <CMD>CocFzfList grep<CR>
+nno ,fo <CMD>CocFzfList mru<CR>
+ino <C-x><C-s> <CMD>w!<CR>
+ino <C-x><C-q> <CMD>qa!<CR>
+ino <C-x><C-x> <CMD>qa!<CR>
+nno <space>fo <CMD>CocCommand fzf-preview.MruFiles<CR>
+imap <c-c><c-d> <cmd>put =strftime('# %a %Y-%m-%d %H:%M:%S%z')<CR>
+nnoremap ,sr <ESC>:%s///gc<Left><Left><Left>
+nnoremap ,cr <ESC>:%s/<C-r><C-w>//gc<Left><Left><Left>
+nnoremap ,cd <CMD>cd %:h<CR>
+imap <C-c><C-r> <ESC>:%s///<LEFT><LEFT>
+imap <C-c><C-d> <CMD>put =strftime('# %a %Y-%m-%d %H:%M:%S%z')<CR>
+
+" cm <C-A> <C-R>=escape(@",'[]/\.*')<CR>
+nno <nowait> <space>vc <cmd>e ~/.vimrc<CR>
+nno <nowait> <space>vs <cmd>so ~/.vimrc<CR>
+set nowarn
+set updatetime=200
+set noswapfile
+set wildignorecase
+  " inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
+  " imap <esc> <C-[>
+
+
+" vm * y/<C-A><CR>| vm / y:%s/<C-A>/
+" vm # y?<C-A><CR>| vm ? y:g/<C-A>/t$<CR>
+" nno <C-S-U> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
+" nno <C-S-D> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
+
+  inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+nmap <silent> gP <Plug>(coc-diagnostic-prev)
+nmap <silent> gp <s-tab> <Plug>(coc-diagnostic-next)
+nnoremap <silent> <c-x><c-b> <CMD>bdelete<CR>
+inoremap <silent> <c-x><c-b> <CMD>bdelete<CR>
+
+imap <M-x> <CMD>Commands<CR>
+
+imap <C-b> <Left>
+imap <C-f> <Right>
+imap <C-a> <Home>
+imap <C-e> <End>
+imap <C-d> <Del>
+imap <C-h> <BS>
+imap <C-k> <C-r>=<SID>kill_line()<CR>
+cmap <C-k> <Up>
+cmap <C-j> <Down>
+cmap <C-b> <Left>
+cmap <C-f> <Right>
+cmap <C-a> <Home>
+cmap <C-e> <End>
+cnoremap <C-d> <Del>
+cnoremap <C-h> <BS>
+cnoremap <C-k> <C-f>D<C-c><C-c>:<Up>
+set lazyredraw
+set ignorecase smartcase
+set regexpengine=1
+nnoremap <silent> <Find-Shortcut>  :Farf<cr>
+vnoremap <silent> <Find-Shortcut>  :Farf<cr>
+
+" shortcut for far.vim replace
+nnoremap <silent> <Replace-Shortcut>  :Farr<cr>
+vnoremap <silent> <Replace-Shortcut>  :Farr<cr>
+nno <silent> ,wn <CMD>VimwikiMakeDiaryNote<CR>
+nno <silent> ,wd <CMD>VimwikiDiaryIndex<CR>
+nno <silent> ,wg <CMD>VimwikiDiaryGenerateLinks<CR>
+nno <silent> ,wi <CMD>VimwikiIndex<CR>
+nno <silent> ,wt <CMD>VimwikiMakeTomorrowDiaryNote<CR>
+nno <silent> ,wy <CMD>VimwikiMakeYesterdayDiaryNote<CR>
