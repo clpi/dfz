@@ -1,0 +1,328 @@
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
+# export XCODE_SEL = `xcode-select --print-path`
+# export XCODE_SEL_PATH = '/Applications/Xcode.app/Contents/Developer'
+  # emulate -L zsh -o extended_glob
+HISTFILE="~/.zsh/histfile"
+HISTSIZE=1000
+SAVEHIST=1000
+# I want cursor to be a beam in insert mode, block in normal and visual mode"
+
+eval "$(brew shellenv)"
+export HISTFILE=~/.zsh/hist
+export EDITOR='nvim'
+export TERMINAL='less'
+export LANG='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
+export LESS='-R'
+export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.local/share/gh/bin:$PATH"
+alias -g sp='sudo port'
+# export PATH="./node_modules/.bin:$PATH"
+# export PATH="$HOME/.dotfiles/node_modules/.bin:$PATH"
+
+# Add this to your .bashrc, .zshrc or equivalent.
+# Run 'fff' with 'f' or whatever you decide to name the function.
+f() {
+    fff "$@"
+    cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
+}
+# source "$HOME/.fig/shell/zshrc.pre.zsh"
+# export FPATH=$FPATH:($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
+# autoload -Uz compinit
+# setopt extendedglob
+
+# for dump in ~/.zcompdump(N.mh+24); do
+#     compinit -i -d dump
+#     compdump
+# done
+# export FPATH=$FPATH:${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+# export FPATH=$FPATH:/opt/homebrew/share/zsh/site-functions
+# compinit -i -d $HOME/.bun/_bun
+# compinit -i -d $HOME/.zcompdump
+export PNPM_HOME="/Users/clp/.local/share/pnpm"
+
+export PATH=$FPATH:$PATH:/Users/clp/.local/share/nelua-lang
+# autoload -U compinit
+# compinit
+#compdef cargo
+# if command -v rustc >/dev/null 2>&1; then
+# 	source "$(rustc --print sysroot)"/share/zsh/site-functions/_cargo
+# fi
+#   if type brew &>/dev/null; then
+#     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+#     autoload -Uz compinit
+#     compinit
+#   fi
+
+alias ig="igite"
+alias icq="ignite scaffold query"
+source $HOME/.zsh/alias.zsh
+source $HOME/.zsh/fn.zsh
+source $HOME/.zsh/maps.zsh
+source $HOME/.zsh/opts.zsh
+source $HOME/.zsh/path.zsh
+source $HOME/.zsh/export.zsh
+source $HOME/.zsh/override.zsh
+source $HOME/.zsh/source.zsh
+source $HOME/.zsh/vars.zsh
+source $HOME/.config/zsh/just.zsh
+# alias ls="eza --color-scale-mode=gradient --hyperlink --group-directories-first --icons=always  --git -h --color-scale=all -F=always"
+# alias la="eza --color-scale-mode=gradient --hyperlink --group-directories-first --icons=always  --git -h --color-scale=all -F=always -a"
+# alias ll="eza -l -h"
+# alias lt="eza -T --recurse --icons --group-directories-first --classify"
+# source "$HOME/.zsh/completion.zsh"
+
+eval "$(atuin gen-completions --shell zsh)"
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+eval "$(direnv hook zsh)"
+eval "$(navi widget zsh)"
+eval "$(mcfly init zsh)"
+# eval "$(fasd init zsh)"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+#
+export PATH="$PATH:/opt/homebrew/bin"
+export PATH="$PATH:$HOME/.fig/bin"
+export PATH="$PATH:$HOME/.config/emacs/bin"
+export PATH="$PATH:$HOME/.local/share/nvim/mason/bin"
+export PATH="$PATH:$HOME/.local/share/lvim/mason/bin"
+export PATH="$PATH:/opt/local/bin"
+export MODULAR_HOME="/Users/clp/.modular"
+export PATH="/Users/clp/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
+export PATH="$PATH:$HOME/.local/share/nelua-lang/"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.opam/default/bin"
+export PATH="$PATH:$HOME/.local/share/ponyup/bin"
+export PATH="$PATH:$HOME/.onyx/bin"
+export PATH="$PATH:$HOME/.skim/bin"
+export PATH="$PATH:$HOME/.wasmer/bin"
+export PATH="$PATH:$HOME/.wasmtime/bin"
+export PATH="$PATH:$HOME/.yarn/bin"
+export PATH="/opt/homebrew/opt/flex/bin:$PATH"
+export PATH="$PATH:$HOME/.nimble/bin"
+export PATH="$PATH:$HOME/.rye/bin"
+export PATH="$PATH:$HOME/.local/share/ponyup/bin"
+export PATH="$PATH:$HOME/.ghcup/bin"
+export PATH="$PATH:$HOME/.fzf/bin"
+export PATH="$PATH:$HOME/.fig/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/miniconda3/bin"
+export PATH="$PATH:$HOME/.local/share/nvim.nvchad/mason/bin"
+export PATH="$PATH:$HOME/.skim/bin"
+
+export PATH="$PATH:/opt/homebrew/opt/llvm/bin"
+export PATH="$PATH:/opt/homebrew/opt/llvm/Toolchain/bin"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/pkg-config/bin/pkg-config"
+export C_INCLUDE_PATH="$C_INCLUDE_PATH:/opt/homebrew/include"
+export C_INCLUDE_PATH="$C_INCLUDE_PATH:/opt/local/include"
+export C_INCLUDE_PATH="$C_INCLUDE_PATH:/Users/clp/.local/include"
+export CXX_INCLUDE_PATH="$CXX_INCLUDE_PATH:/opt/local/include"
+export CXX_INCLUDE_PATH="$CXX_INCLUDE_PATH:/opt/homebrew/include"
+export CXX_INCLUDE_PATH="$CXX_INCLUDE_PATH:/Users/clp/.local/include"
+export CPP_INCLUDE_PATH="$CPP_INCLUDE_PATH:/opt/local/include"
+export CPP_INCLUDE_PATH="$CPP_INCLUDE_PATH:/Users/clp/.local/include"
+export CPP_INCLUDE_PATH="$CPP_INCLUDE_PATH:/opt/homebrew/include"
+export CPLUS_INCLUDE_PATH="/opt/local/include"
+export CPLUS_INCLUDE_PATH="/opt/homebrew/include"
+export CC_INCLUDE_PATH="$CC_INCLUDE_PATH:/opt/local/include"
+export CC_INCLUDE_PATH="$CC_INCLUDE_PATH:/opt/homebrew/include"
+export CC_INCLUDE_PATH="$CC_INCLUDE_PATH:/Users/clp/.local/include"
+export CPP_INCLUDE_PATH="$CPP_INCLUDE_PATH:/opt/local/include"
+export CPP_INCLUDE_PATH="$CPP_INCLUDE_PATH:/opt/homebrew/include"
+export C_INCLUDE_PATH="$C_INCLUDE_PATH:/opt/local/libexec/llvm-17/include/llvm-c"
+export C_INCLUDE_PATH="$C_INCLUDE_PATH:/opt/local/libexec/llvm-17/include/mlir-c"
+export CPLUS_INCLUDE_PATH="$CPLUS_INCLUDE_PATH:/opt/local/libexec/llvm-17/include/llvm"
+export CPLUS_INCLUDE_PATH="$CPLUS_INCLUDE_PATH:/opt/local/libexec/llvm-17/include/mlir"
+export CPLUS_INCLUDE_PATH="$CPLUS_INCLUDE_PATH:/opt/homebrew/include"
+export C_INCLUDE_PATH="$C_INCLUDE_PATH:/opt/homebrew/include"
+export CPLUS_INCLUDE_PATH="$CPLUS_INCLUDE_PATH:/opt/local/include"
+export C_INCLUDE_PATH="$C_INCLUDE_PATH:/opt/local/include"
+# export LDFLAGS="-L/opt/homebrew/opt/flex/lib"
+# export CPPFLAGS="-I/opt/homebrew/opt/flex/include"
+# export CXXFLAGS="-I/opt/homebrew/opt/flex/include"
+
+export PATH="$PATH:/opt/homebrew/opt/llvm/bin"
+export PATH="$PATH:/opt/homebrew/opt/llvm/include"
+export PATH="$PATH:/opt/homebrew/opt/llvm/include"
+export PATH="$PATH:/opt/homebrew/opt/llvm/Toolchains/LLVM17.0.6.xctoolchain/usr/bin"
+export LD_LIBRARY_PATH="/opt/local/libexec/llvm-17/lib"
+
+alias lclang++="clang++ -I/opt/local/libexec/llvm/include"
+alias lg++="g++ -I/opt/local/libexec/llvm/include"
+export VCPKG_ROOT="/opt/homebrew/opt/vcpkg"
+# -L/opt/homebrew/opt/llvm/lib
+# -I/opt/homebrew/opt/include
+# xport PKG_CONFIG_PATH=/usr/local/Cellar/abc/0.1.5/lib/pkgconfig
+# export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/Cellar/abc/0.1.5/lib/pkgconfig
+# export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/my/build/from/source/mmmm/0.1.5/lib/pkgconfig
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export EDITOR="nvim"
+
+export PAGER="vimpager"
+export MANPAGER="vimpager"
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export MANPATH=/opt/local/share/man:$MANPATH
+
+alias qtb="qutebrowser --qt-wrapper PyQt5"
+# source "./.config/zsh/override.sh"
+
+export py="/opt/homebrew/bin/python3"
+export py3="/opt/homebrew/bin/python3"
+export pythoncfg="/opt/homebrew/bin/python3-config"
+export python="/opt/homebrew/bin/python3"
+export python3="/opt/homebrew/bin/python3"
+export pythoncfg="/opt/homebrew/bin/python3-config"
+
+# vim.cmd[[
+#   nno <space>s. <CMD>FzfLua ~/.config<CR>
+# ]]
+
+# bun completions
+# source /opt/homebrew/share/zsh-completions/
+[ -s "/Users/clp/.bun/_bun" ] && source "/Users/clp/.bun/_bun"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+export PATH=$PATH:/Users/clp/.fig/bin
+export PATH=$PATH:/Users/clp/.pixi/bin
+export PATH=$PATH:/Users/clp/.pack/bin
+bindkey '^ ' autosuggest-accept
+
+alias lvc="lvim ~/.config/lvim/config.lua"
+alias lvf='lvim `fzf`'
+alias nvf='nvim `fzf`'
+alias hxf='hx `fzf`'
+alias lvlf='lvim `lf`'
+alias l.='lvim `fzf ~/.config`'
+alias v.='vim `fzf ~/.config`'
+alias n.='nvim `fzf ~/.config`'
+
+# fpath+=/opt/homebrew/var/si
+## compinit optimization for oh-my-zsh
+# On slow systems, checking the cached .zcompdump file to see if it must be
+# regenerated adds a noticable delay to zsh startup.  This little hack restricts
+# it to once a day.  It should be pasted into your own completion file.
+#
+# The globbing is a little complicated here:
+# - '#q' is an explicit glob qualifier that makes globbing work within zsh's [[ ]] construct.
+# - 'N' makes the glob pattern evaluate to nothing when it doesn't match (rather than throw a globbing error)
+# - '.' matches "regular files"
+# - 'mh+24' matches files (or directories or whatever) that are older than 24 hours.
+# autoload -U compaudit compinit
+#: ${ZSH_DISABLE_COMPFIX:=true}
+# ...
+# If completion insecurities exist, warn the user without enabling completions.
+export FFF_KEY_MKDIR="a"
+export FFF_KEY_MKFILE="A"
+alias grep='grep --color=auto'
+zstyle ':completion:*' menu yes select
+zstyle ':completion:*' verbose yes
+
+# source "$HOME/.fig/shell/zshrc.post.zsh"
+
+alias lf='lf'
+alias lr="ranger"
+alias ly="yazi"
+# ls="eza --hyperlink --group-directories-first --icons=always  --git -h --color-scale=all -F=always"
+# la="eza --hyperlink --group-directories-first --icons=always  --git -h --color-scale=all -F=always -a"
+# ll="eza -l -h --hyperlink --group-directories-first --icon=always --git -h --color=scale-all -F=always"
+alias l="eza --hyperlink --group-directories-first --icons=always  --git -h --color-scale=all -F=always"
+alias le="eza --hyperlink --group-directories-first --icons=always  --git -h --color-scale=all -F=always -a"
+alias lt="eza -l -h --hyperlink --group-directories-first --icon=always --git -h --color=scale-all -F=always"
+alias lq="eza -T --hyperlink --recurse --icons --group-directories-first --classify"
+alias lj="joshuto"
+alias nvf='nvim `fzf`'
+alias lvf='lvim `fzf`'
+alias hxf='hx `fzf`'
+alias vif='vi `fzf`'
+alias rr="ranger"
+alias yy="yazi"
+alias flx="felix"
+alias jto="joshuto"
+alias addssh="echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCzt/JQSkXyst9WDVJcZm9CUf3M9pjCrBBS25QBZREUaDztXOEKpde80ZlLjO0cQXwcTBnXc3VvolrzMTVYaQxXbYqLplPXJNputRo6JpPWoEfmtXkwyZzxPfjlpU2v9sSPmrqYD01wKg3RjCE/6bHykCv0LHl1m08huEMVmGSElSDzTcZoMusomGMptD4AWF6YO2wmPc6clDsgLINaMmm+DM28FkWmwlsCAYjvHlfLHpG+wB4XzA+bTiZBGevgHxVYrDzBQwu6UiRGMsAewqVDEMiwr1fGlTjzrkwiNYtIjd1gjsplQm6Zk8CAVpy2/J9pj6flUieDsmYvEWM4W8iT6RFL6cKbHl1ApTcSloqLRFoVJs92+FJ6fXAMR4k2CuyjO1sJWbaRWGJnHyNg0nbvnii76D8DFDCRZvwiZfeoXepcmwLqK5xS1r9AawHPs/QHakVhS1VCbBC6dPL08EGJijdyOFQFnW6H/HGAaDjOgEGa4gzpXDpbGfoPYhYn5BblCfp89c8w8YDwpUYdhAmt/Muc9Pgyykt9BWM1v2cGi9Xny3I8R4Ogsdqs0lEMz6IJhY7bfao49M5gQUYb4Kv9LssF5EraVQipUBl+27KN3qy9Ag57X8r3HRYKSLOsXyBPrzpAk2T/ns6Z+Yt1zhUaGT6LoEgeUyde38km/z8agQ== clp@clp.is' >> ~/.ssh/known_hosts"
+# alias ls="exa --icons --group-directories-first"
+alias br="bun run"
+alias dr="deno run"
+alias bc="bun create"
+alias bbl="bun build"
+alias dr="deno run"
+alias db="deno build"
+alias nbr="nimble run"
+export PATH=/opt/homebrew/Cellar/felinks/0.17.0/bin:$PATH
+export PATH=/opt/homebrew/Cellar/amfora/1.10.0/bin:$PATH
+export PATH=/Users/clp/.local/share/v:$PATH
+# function mkd() { mkdir -p $1 && cd $1 }
+# alias mcd=mkd()
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/Users/clp/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/Users/clp/miniconda3/etc/profile.d/conda.sh" ]; then
+#         . "/Users/clp/miniconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/Users/clp/miniconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# <<< conda initialize <<<
+
+# alias py="/opt/homebrew/bin/python3.12"
+# alias pip="/opt/homebrew/bin/pip3.12"
+
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# alias ls='lsd --group-dirs first --date relative --color always --icon-theme fancy -h'
+# alias ll='lsd --group-dirs first --date relative --color always -l --context --hyperlink --classify --long -h'
+# alias la='lsd --group-dirs first --date relative --color always -a'
+
+# alias gca="git commit -am 'msg'"
+source "/Users/clp/.config/zsh/ssh.zsh"
+tere() {
+    local result=$(command tere "$@")
+    [ -n "$result" ] && cd -- "$result"
+}
+# vim: set filetype=bash
+# unalias ls
+# unalias la
+# unalias ll
+# ls='eza --color-scale-mode=gradient --hyperlink --group-directories-first --icons=always  --git -h --color-scale=all -F=always'
+# la='eza --color-scale-mode=gradient --hyperlink --group-directories-first --icons=always  --git -h --color-scale=all -F=always -a'
+# ll='eza -l -h'
+alias lt='eza -T --recurse --icons --group-directories-first --classify'
+alias ls="eza --color-scale-mode=gradient --hyperlink --group-directories-first --icons=always  --git -h --color-scale=all -F=always"
+alias la="eza --color-scale-mode=gradient --hyperlink --group-directories-first --icons=always  --git -h --color-scale=all -F=always -a"
+alias ll="eza -l -h"
+alias lt="eza -T --recurse --icons --group-directories-first --classify"
+export DFD="$HOME/.config/"
+export LOC="$HOME/.local/"
+export CHD="$HOME/.cache/"
+
+alias bri="brew install"
+alias brs="brew search"
+alias bro="brew outdated"
+alias bru="brew upgrade"
+alias brc="brew cleanup"
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+source /opt/homebrew/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh
+source /opt/homebrew/share/zsh-autopair/autopair.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+plugins=(git volta python poetry tmux zoxide zsh-interactive-cd  ssh ssh-agent tmuxinator rust pip npm macos git-flow gitignore github git-lfs git-extras gh fzf fig eza chezmoi aliases)
+alias yf="yazi"
+alias xf="xplr"
+alias rf="ranger"
+alias lf="lf"
+alias jf="joshuto"
+alias zj="zellij"
+alias cm="chezmoi"
