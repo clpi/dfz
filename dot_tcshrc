@@ -1,0 +1,2 @@
+eval `direnv hook tcsh`
+eval `(/Users/clp/.cargo/bin/starship init tcsh --print-full-init)`

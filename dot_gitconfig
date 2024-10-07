@@ -1,0 +1,25 @@
+[user]
+	name = Chris Pecunies
+	email = clp@clp.is
+	signingkey = 3AA5C34371567BD2
+[core]
+	autocrlf = input
+  editor = true
+	excludesfile = ~/.gitignore_global
+  pager = delta
+[interactive]
+  diffFilter=delta --color-only
+[delta]
+  navigate=true
+  true-color=always
+  hyperlinks=true
+[merge]
+  confictStyle = diff3
+[diff]
+  colorMoved = default
+[color]
+  ui = true
+[pull]
+	rebase = true
+[init]
+	defaultBranch = master

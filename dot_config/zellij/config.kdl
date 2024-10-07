@@ -1,7 +1,7 @@
 
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
 serialize_pane_viewport true
-keybinds clear-defaults=true
+keybinds_clear_defaults true
 keybinds {
     normal {
         // uncomment this and adjust key if using copy_on_select=false

@@ -1,0 +1,7 @@
+from xonsh.built_ins import XonshSession
+from xonsh.prompt.vc import git_dirty_working_directory
+execx($(zoxide init xonsh), 'exec', __xonsh__.ctx, filename='zoxide')
+
+execx($(starship init xonsh))
+
+execx($(atuin init xonsh))
