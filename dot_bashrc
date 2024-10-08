@@ -21,7 +21,7 @@ export CHD="$HOME/.cache/"
 # ~/.bashrc
 #
 
-. "$HOME/.fig/shell/bashrc.pre.bash"
+# . "$HOME/.fig/shell/bashrc.pre.bash"
 alias ez="vim ~/.zshrc"
 alias sz="source ~/.zshrc"
 alias eb="vim ~/.bashrc"
@@ -160,7 +160,7 @@ export PATH="$PATH:/opt/homebrew/opt/llvm/Toolchain/bin"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/pkg-config/bin/pkg-config"
 alias qtb="qutebrowser --qt-wrapper"
 export PATH="$PATH:/opt/homebrew/bin/hx"
-. "$HOME/.fig/shell/bashrc.post.bash"
+# . "$HOME/.fig/shell/bashrc.post.bash"
 
 # alias ls='lsd --group-dirs first --date relative --color always'
 # alias ll='lsd --group-dirs first --date relative --color always -l'
@@ -188,3 +188,28 @@ tere() {
 . $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 source /opt/homebrew/share/bash-completion/bash_completion
 # eval "$(direnv hook bash)"
+# alias emacs="emacs-29.2"
+alias yf="yazi"
+alias xf="xplr"
+alias rf="ranger"
+alias lf="lf"
+alias sf="spf"
+alias jf="joshuto"
+alias ff="fff"
+alias zj="zellij"
+alias cm="chezmoi"
+alias ca="chezmoi add"
+alias ced="chezmoi edit"
+alias ce="chezmoi edit --apply"
+alias cew="chezmoi edit --watch"
+alias cdi="chezmoi diff"
+alias cl="chezmoi -v apply"
+alias ccd="chezmoi cd"
+alias cup="chezmoi update"
+alias cez="chezmoi edit --apply ~/.zshrc"
+alias ceb="chezmoi edit --apply ~/.bashrc"
+alias cet="chezmoi edit --apply ~/.tmux.conf"
+alias cev="chezmoi edit --apply ~/.vimrc"
+alias gaa="git add --all"
+alias gpom="git push origin master"
+alias cf="chezmoi forget"
