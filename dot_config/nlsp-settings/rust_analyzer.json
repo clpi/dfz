@@ -1,0 +1,12 @@
+{
+    "rust-analyzer.highlightRelated.references": true,
+    "rust-analyzer.lens.run": true,
+    "rust-analyzer.lens.debug": true,
+    "rust-analyzer.lens.enable": true,
+    "rust-analyzer.lens.references": true,
+    "rust-analyzer.inlayHints.enable": true,
+    "rust-analyzer.lens.enumVariantReferences": true,
+    "rust-analyzer.hoverActions.run": true,
+    "rust-analyzer.callInfo.full": true,
+    "rust-analyzer.inlayHints.lifetimeElisionHints.enable":"skip_trivial"
+}

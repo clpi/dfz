@@ -1,0 +1,7 @@
+{
+    "yaml.schemaStore.enable": true,
+    "yaml.hover": true,
+    "yaml.completion": true,
+    "redhat.telemetry.enabled": false,
+    "yaml.format.enable": true
+}

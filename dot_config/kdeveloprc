@@ -1,0 +1,322 @@
+[CMakeBuildDirChooser]
+LastExtraArguments=
+
+[DownloadDialog Settings]
+eDP-1 Height 1648x1030 eDP-1=520
+eDP-1 Height 2880x1800 eDP-1=1135
+eDP-1 Width 1648x1030 eDP-1=700
+eDP-1 Width 2880x1800 eDP-1=1510
+
+[External Scripts]
+firstUse=false
+
+[External Scripts][Google Selection]
+command=xdg-open "https://www.google.com/search?q=%s"
+errorMode=0
+filterMode=0
+inputMode=0
+name=Google Selection
+outputMode=0
+saveMode=0
+shortcuts=
+showOutput=false
+
+[External Scripts][Paste to Hastebin]
+command=a=$(cat); curl -X POST -s -d "$a" https://hastebin.com/documents | awk -F '"' '{print "https://hastebin.com/"$4}' | xargs xdg-open ;
+errorMode=0
+filterMode=0
+inputMode=2
+name=Paste to Hastebin
+outputMode=0
+saveMode=0
+shortcuts=
+showOutput=false
+
+[External Scripts][Quick Compile]
+command=g++ -o %b %f && ./%b
+errorMode=0
+filterMode=0
+inputMode=0
+name=Quick Compile
+outputMode=0
+saveMode=0
+shortcuts=
+showOutput=true
+
+[External Scripts][Sort Selection]
+command=sort
+errorMode=0
+filterMode=0
+inputMode=2
+name=Sort Selection
+outputMode=3
+saveMode=0
+shortcuts=
+showOutput=false
+
+[KFileDialog Settings]
+Recent Files[$e]=file:$HOME/.vimrc,file:$HOME/.vimrc
+Recent URLs[$e]=file:$HOME/
+detailViewIconSize=16
+
+[KTextEditor Document]
+Allow End of Line Detection=true
+Auto Detect Indent=true
+Auto Reload If State Is In Version Control=true
+Auto Save=false
+Auto Save Interval=0
+Auto Save On Focus Out=false
+BOM=false
+Backup Local=false
+Backup Prefix=
+Backup Remote=false
+Backup Suffix=~
+Camel Cursor=true
+Encoding=UTF-8
+End of Line=0
+Indent On Backspace=true
+Indent On Tab=true
+Indent On Text Paste=false
+Indentation Mode=normal
+Indentation Width=2
+Keep Extra Spaces=false
+Line Length Limit=10000
+Newline at End of File=true
+On-The-Fly Spellcheck=false
+Overwrite Mode=false
+PageUp/PageDown Moves Cursor=false
+Remove Spaces=1
+ReplaceTabsDyn=false
+Show Spaces=0
+Show Tabs=true
+Smart Home=true
+Swap Directory=
+Swap File Mode=1
+Swap Sync Interval=15
+Tab Handling=2
+Tab Width=2
+Trailing Marker Size=1
+Word Wrap=false
+Word Wrap Column=80
+
+[KTextEditor Editor]
+Encoding Prober Type=1
+Fallback Encoding=ISO 8859-15
+
+[KTextEditor Renderer]
+Animate Bracket Matching=true
+Auto Color Theme Selection=false
+Color Theme=ayu Mirage
+Font=Iosevka Term,10,-1,5,50,0,0,0,0,0
+Line Height Multiplier=1
+Show Indentation Lines=true
+Show Whole Bracket Expression=false
+Word Wrap Marker=false
+
+[KTextEditor View]
+Allow Mark Menu=true
+Auto Brackets=true
+Auto Center Lines=0
+Auto Completion=true
+Auto Completion Preselect First Entry=true
+Backspace Remove Composed Characters=false
+Bookmark Menu Sorting=0
+Bracket Match Preview=true
+Chars To Enclose Selection=<>(){}[]'"
+Default Mark Type=1
+Dynamic Word Wrap=true
+Dynamic Word Wrap Align Indent=80
+Dynamic Word Wrap At Static Marker=false
+Dynamic Word Wrap Indicators=1
+Dynamic Wrap not at word boundaries=true
+Enable Tab completion=true
+Fold First Line=false
+Folding Bar=true
+Folding Preview=true
+Icon Bar=true
+Input Mode=0
+Keyword Completion=true
+Line Modification=true
+Line Numbers=true
+Max Clipboard History Entries=20
+Maximum Search History Size=100
+Mouse Paste At Cursor Position=false
+Multiple Cursor Modifier=134217728
+Persistent Selection=false
+Scroll Bar Marks=true
+Scroll Bar Mini Map All=true
+Scroll Bar Mini Map Width=60
+Scroll Bar MiniMap=true
+Scroll Bar Preview=true
+Scroll Past End=false
+Search/Replace Flags=140
+Shoe Line Ending Type in Statusbar=false
+Show Documentation With Completion=true
+Show File Encoding=true
+Show Focus Frame Around Editor=true
+Show Folding Icons On Hover Only=true
+Show Line Count=true
+Show Scrollbars=0
+Show Statusbar Dictionary=true
+Show Statusbar Highlighting Mode=true
+Show Statusbar Input Mode=true
+Show Statusbar Line Column=true
+Show Statusbar Tab Settings=true
+Show Word Count=true
+Smart Copy Cut=true
+Statusbar Line Column Compact Mode=true
+Text Drag And Drop=true
+User Sets Of Chars To Enclose Selection=
+Vi Input Mode Steal Keys=true
+Vi Relative Line Numbers=true
+Word Completion=true
+Word Completion Minimal Word Length=3
+Word Completion Remove Tail=true
+
+[KatePart Settings]
+documents=/home/clp/projects/m/src/controls/main.qml,/home/clp/projects/m/CMakeLists.txt,/home/clp/projects/m/src/code/main.cpp,/home/clp/projects/ka/ka/ka.kdevtemplate
+
+[KatePart Settings][/home/clp/projects/ka/ka/ka.kdevtemplate]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=None
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=Normal
+Mode Set By User=false
+URL=file:///home/clp/projects/ka/ka/ka.kdevtemplate
+
+[KatePart Settings][/home/clp/projects/m/CMakeLists.txt]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=CMake
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=CMake
+Mode Set By User=false
+URL=file:///home/clp/projects/m/CMakeLists.txt
+
+[KatePart Settings][/home/clp/projects/m/src/code/main.cpp]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=C++
+Highlighting Set By User=false
+Indentation Mode=cstyle
+Mode=C++
+Mode Set By User=false
+URL=file:///home/clp/projects/m/src/code/main.cpp
+
+[KatePart Settings][/home/clp/projects/m/src/controls/main.qml]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=QML
+Highlighting Set By User=false
+Indentation Mode=cstyle
+Mode=QML
+Mode Set By User=false
+URL=file:///home/clp/projects/m/src/controls/main.qml
+
+[Main Window]
+Desktop 1440 900=0,0,664,872
+Desktop 1645 1028=0,0,1643,977
+Desktop 2880 1800=0,92,2880,1708
+
+[MainWindow]
+State=AAAA/wAAAAD9AAAAAgAAAAAAAAFeAAADEPwCAAAABPsAAAAcAEQAbwBjAHUAbQBlAG4AdABzAF8AYwBvAGQAZQAAAABZAAAGJQAAAFkA////+wAAAB4AUwBjAHIAYQB0AGMAaABwAGEAZABfAGMAbwBkAGUAAAAAWQAABiUAAACVAP////sAAAAgAEYAaQBsAGUAIABTAHkAcwB0AGUAbQBfAGMAbwBkAGUAAAAAWQAABiUAAAAAAAAAAPsAAAAaAFAAcgBvAGoAZQBjAHQAcwBfAGMAbwBkAGUBAAAAOwAAAxAAAAD/AP///wAAAAMAAAEEAAAAZ/wBAAAAA/sAAAAaAFAAcgBvAGIAbABlAG0AcwBfAGMAbwBkAGUAAAABsgAACWkAAACSAP////sAAAAoAFYAZQByAHMAaQBvAG4AIABDAG8AbgB0AHIAbwBsAF8AYwBvAGQAZQEAAAGyAAAJaQAAAAAAAAAA+wAAABQAQgB1AGkAbABkAF8AYwBvAGQAZQEAAAF8AAABBAAAAFkA////AAABBAAAAqMAAAAEAAAABAAAAAEAAAAC/AAAAAQAAAAAAAAAAQAAAB4ATABlAGYAdAAgAEIAdQB0AHQAbwBuACAAQgBhAHIDAAAAAP////8AAAAAAAAAAAAAAAEAAAABAAAAIABSAGkAZwBoAHQAIABCAHUAdAB0AG8AbgAgAEIAYQByAwAAAAD/////AAAAAAAAAAAAAAACAAAABAAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAAAAAAgAHEAdQBpAGMAawBPAHAAZQBuAFQAbwBvAGwAQgBhAHIBAAAAiv////8AAAAAAAAAAAAAACwASwBEAGUAdgBDAG8AZABlAGIAcgBvAHcAcwBlAHIAVABvAG8AbABCAGEAcgEAAAFn/////wAAAAAAAAAAAAAAGABkAGUAYgB1AGcAVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAAwAAAAEAAAAiAEIAbwB0AHQAbwBtACAAQgB1AHQAdABvAG4AIABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+eDP-1=eDP-1
+eDP-1 Height 1440x900 eDP-1=872
+eDP-1 Height 1645x1028 eDP-1=468
+eDP-1 Height 1648x1030 eDP-1=257
+eDP-1 Height 2880x1800 eDP-1=319
+eDP-1 Width 1440x900 eDP-1=664
+eDP-1 Width 1645x1028 eDP-1=664
+eDP-1 Width 1648x1030 eDP-1=755
+eDP-1 Width 2880x1800 eDP-1=805
+eDP-1 Window-Maximized 1645x1028 eDP-1=true
+eDP-1 Window-Maximized 1648x1030 eDP-1=true
+eDP-1 Window-Maximized 2880x1800 eDP-1=true
+eDP-1 XPosition 1440x900 eDP-1=5
+eDP-1 XPosition 1645x1028 eDP-1=0
+eDP-1 XPosition 2880x1800 eDP-1=1037
+eDP-1 YPosition 1440x900 eDP-1=19
+eDP-1 YPosition 1645x1028 eDP-1=0
+eDP-1 YPosition 2880x1800 eDP-1=835
+
+[MainWindow_code]
+(1) Tool Views Order=org.kdevelop.ScratchpadView,org.kdevelop.ProjectsView,org.kdevelop.ClassBrowserView,org.kdevelop.DocumentsView,org.kdevelop.FileManagerView
+(2) Tool Views Order=org.kdevelop.ExternalScriptView,org.kdevelop.OutlineView,org.kdevelop.TemplateFilePreview
+(8) Tool Views Order=org.kdevelop.KonsoleView,org.kdevelop.ContextBrowser,org.kdevelop.ProblemReporterView,org.kdevelop.OutputView.0
+State=AAAA/wAAAAD9AAAAAgAAAAAAAAFeAAADEPwCAAAABPsAAAAcAEQAbwBjAHUAbQBlAG4AdABzAF8AYwBvAGQAZQAAAABZAAAGJQAAAFkA////+wAAAB4AUwBjAHIAYQB0AGMAaABwAGEAZABfAGMAbwBkAGUAAAAAWQAABiUAAACVAP////sAAAAgAEYAaQBsAGUAIABTAHkAcwB0AGUAbQBfAGMAbwBkAGUAAAAAWQAABiUAAABMAP////sAAAAaAFAAcgBvAGoAZQBjAHQAcwBfAGMAbwBkAGUBAAAAOwAAAxAAAAD/AP///wAAAAMAAAEEAAAAZ/wBAAAAA/sAAAAaAFAAcgBvAGIAbABlAG0AcwBfAGMAbwBkAGUAAAABsgAACWkAAACSAP////sAAAAoAFYAZQByAHMAaQBvAG4AIABDAG8AbgB0AHIAbwBsAF8AYwBvAGQAZQEAAAGyAAAJaQAAAAAAAAAA+wAAABQAQgB1AGkAbABkAF8AYwBvAGQAZQEAAAF8AAABBAAAAFkA////AAABBAAAAqMAAAAEAAAABAAAAAEAAAAC/AAAAAQAAAAAAAAAAQAAAB4ATABlAGYAdAAgAEIAdQB0AHQAbwBuACAAQgBhAHIDAAAAAP////8AAAAAAAAAAAAAAAEAAAABAAAAIABSAGkAZwBoAHQAIABCAHUAdAB0AG8AbgAgAEIAYQByAwAAAAD/////AAAAAAAAAAAAAAACAAAABAAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAAAAAAgAHEAdQBpAGMAawBPAHAAZQBuAFQAbwBvAGwAQgBhAHIBAAAAiv////8AAAAAAAAAAAAAACwASwBEAGUAdgBDAG8AZABlAGIAcgBvAHcAcwBlAHIAVABvAG8AbABCAGEAcgEAAAFn/////wAAAAAAAAAAAAAAGABkAGUAYgB1AGcAVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAAwAAAAEAAAAiAEIAbwB0AHQAbwBtACAAQgB1AHQAdABvAG4AIABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+debugToolBarVisibility=false
+eDP-1=eDP-1
+eDP-1 Height 1440x900 eDP-1=872
+eDP-1 Width 1440x900 eDP-1=664
+eDP-1 Window-Maximized 1645x1028 eDP-1=true
+eDP-1 Window-Maximized 2880x1800 eDP-1=true
+eDP-1 XPosition 1440x900 eDP-1=5
+eDP-1 YPosition 1440x900 eDP-1=19
+
+[Open File]
+Last Open File Directory=file:///home/clp/projects/ka/ka/
+
+[Recent Files]
+File1[$e]=$HOME/projects/m/src/controls/main.qml
+File2[$e]=$HOME/projects/m/src/code/main.cpp
+File3[$e]=$HOME/projects/m/CMakeLists.txt
+File4[$e]=$HOME/projects/ka/ka/ka.kdevtemplate
+Name1[$e]=main.qml
+Name2[$e]=main.cpp
+Name3[$e]=CMakeLists.txt
+Name4[$e]=ka.kdevtemplate
+
+[RecentProjects]
+File1[$e]=$HOME/projects/ka/ka.kdev4
+File2[$e]=$HOME/projects/sd/sd.kdev4
+File3[$e]=$HOME/projects/m/m.kdev4
+Name1[$e]=ka.kdev4
+Name2[$e]=sd.kdev4
+Name3[$e]=m.kdev4
+
+[Sessions]
+Active Session ID={94fde124-07e8-49c0-a69f-bc1231453dae}
+
+[UiSettings]
+ColorScheme=
+ShowTextEditorStatusBar=false
+
+[UiSettings/Docks/ToolbarEnabled]
+Build_code=true
+File System_code=true
+Problems_code=true
+Projects_code=true
+Scratchpad_code=true
+Version Control_code=true
+
+[User Interface]
+Main Windows Count=1
+
+[User Interface][Main Window 0][Area code]
+desired views=org.kdevelop.ClassBrowserView:1,org.kdevelop.ContextBrowser:8,org.kdevelop.DocumentsView:1,org.kdevelop.ExternalScriptView:2,org.kdevelop.FileManagerView:1,org.kdevelop.KonsoleView:8,org.kdevelop.OutlineView:2,org.kdevelop.OutputView:8,org.kdevelop.OutputView.0:8,org.kdevelop.OutputView.4:8,org.kdevelop.ProblemReporterView:8,org.kdevelop.ProjectsView:1,org.kdevelop.ScratchpadView:1,org.kdevelop.SnippetView:2,org.kdevelop.TemplateFilePreview:2
+id=code
+view on bottom=org.kdevelop.OutputView.0
+view on left=org.kdevelop.ProjectsView
+view on right=
+view on top=
+
+[User Interface][Main Window 0][Area debug]
+desired views=org.kdevelop.FileManagerView:1,org.kdevelop.KonsoleView:8,org.kdevelop.OutputView.0:8,org.kdevelop.OutputView.4:8,org.kdevelop.debugger.BreakpointsView:8,org.kdevelop.debugger.ConsoleView:8,org.kdevelop.debugger.StackView:8,org.kdevelop.debugger.VariablesView:1
+id=debug
+view on bottom=
+view on left=
+view on right=
+view on top=
+
+[User Interface][Main Window 0][Area review]
+desired views=org.kdevelop.FileManagerView:1,org.kdevelop.OutputView.0:8,org.kdevelop.OutputView.4:8,org.kdevelop.PatchReview:8,org.kdevelop.ProjectsView:1
+id=review
+view on bottom=
+view on left=
+view on right=
+view on top=

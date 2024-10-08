@@ -1,0 +1,6 @@
+{
+    "nim.lintOnSave": true,
+    "nim.buildOnSave": false,
+    "nim.nimprettyIndent":2,
+    "nim.enableNimsuggest": true
+}

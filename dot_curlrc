@@ -1,0 +1,4 @@
+silent
+show-error
+netrc-options1
+header = "Accept: application/json, applicaiton/xml, test/plain, */*"
