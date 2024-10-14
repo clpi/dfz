@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 # Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/bashrc.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/bashrc.pre.bash"
 
@@ -16,6 +16,7 @@
 #   HISTCONTROL=ignoreboth
 
 export DFD="$HOME/.config/"
+export PVP="$HOME/dev/nv/ne"
 export LOC="$HOME/.local/"
 export CHD="$HOME/.cache/"
 # ~/.bashrc
@@ -31,7 +32,7 @@ alias nv="nvim"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-[[ -f ~/.welcome_screen ]] && . ~/.welcome_screen
+# [[ -f ~/.welcome_screen ]] && . ~/.welcome_screen
 
 _set_liveuser_PS1() {
   PS1='[\u@\h \W]\$ '
@@ -213,3 +214,10 @@ alias cev="chezmoi edit --apply ~/.vimrc"
 alias gaa="git add --all"
 alias gpom="git push origin master"
 alias cf="chezmoi forget"
+
+nix-q() {
+  # nix-env --query -a --description --status ".*$1.*"
+  nix-env --query -a ".*$1.*"
+}
+
+#vim:ft=bash

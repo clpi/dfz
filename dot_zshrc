@@ -274,8 +274,8 @@ export PATH=/Users/clp/.local/share/v:$PATH
 # unset __conda_setup
 # <<< conda initialize <<<
 
-# alias py="/opt/homebrew/bin/python3.12"
-# alias pip="/opt/homebrew/bin/pip3.12"
+alias pip3="/opt/homebrew/bin/pip3.12"
+alias pip="/opt/homebrew/bin/pip3.12"
 
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -318,7 +318,11 @@ source /opt/homebrew/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh
 source /opt/homebrew/share/zsh-autopair/autopair.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-plugins=(git volta python poetry tmux zoxide zsh-interactive-cd  ssh ssh-agent tmuxinator rust pip npm macos git-flow gitignore github git-lfs git-extras gh fzf eza chezmoi aliases)
+plugins=(
+  git volta python poetry tmux zoxide zsh-interactive-cd  
+  ssh ssh-agent tmuxinator rust pip npm macos git-flow 
+  gitignore github git-lfs git-extras gh fzf eza chezmoi 
+  common-aliases conda deno docker docker-compose dotenv)
 alias yf="yazi"
 alias xf="xplr"
 alias rf="ranger"
@@ -326,6 +330,11 @@ alias lf="lf"
 alias sf="spf"
 alias jf="joshuto"
 alias ff="fff"
+alias vf="vifm"
+alias nf="nnn"
+alias clf="clifm"
+alias tm="tmux"
+alias sc="screen"
 alias zj="zellij"
 alias cm="chezmoi"
 alias ca="chezmoi add"
@@ -343,4 +352,18 @@ alias cev="chezmoi edit --apply ~/.vimrc"
 alias gaa="git add --all"
 alias gpom="git push origin master"
 alias cf="chezmoi forget"
+alias ni="nix-env -iA nixpkgs."
+export PATH=/nix/store/1n95r340s7p3vdwqh7m94q0a42crahqq-nix-2.24.9/bin:$PATH
+nix-q() {
+  # nix-env --query -a --description --status ".*$1.*"
+  nix-env --query -a ".*$1.*"
+}
+alias nq="nix-query"
 # alias emacs="emacs-29.2"
+export CMD="$HOME/.local/share/chezmoi/"
+export CFG="$HOME/.config"
+alias docker=podman
+alias docker-compose="podman compose"
+#
+#
+# vim:ft=bash
